@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Appsimpect</title>
+</head>
+<body>
+  <form method="POST">
+    {% csrf_token %}
+    {% for fm in form %}
+      {{fm.label_tag}} {{fm}} {{fm.errors | striptags }} <br> <br>
+    {% endfor %}
+    <input type="submit" name="submit">
+  </form> <br> <br>
+  <a href="{% url 'signin'%}">Login</a>
+
+</body>
+</html>
